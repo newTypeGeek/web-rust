@@ -2,7 +2,7 @@
 FROM rust:slim AS builder
 
 # set working directory
-WORKDIR /usr/src/myapp
+WORKDIR /usr/src/web-rust
 
 # copy source code
 COPY . .
@@ -17,7 +17,7 @@ FROM debian:buster-slim
 WORKDIR /usr/src/myapp
 
 # copy binary from builder
-COPY --from=builder /usr/src/myapp/target/release/myapp .
+COPY --from=builder /usr/src/web-rust/target/release/web-rust .
 
 # run binary
-CMD ["./myapp"]
+CMD ["./web-rust"]
