@@ -14,7 +14,7 @@ RUN cargo build --release
 FROM debian:buster-slim
 
 # set working directory
-WORKDIR /usr/src/myapp
+WORKDIR /usr/src/web-rust
 
 # copy binary from builder
 COPY --from=builder /usr/src/web-rust/target/release/web-rust .
